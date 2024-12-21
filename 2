@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int time1, time2, time3;
+    int totalProcessingTime = 0; 
+
+    cout << "введите время обработки" << endl;
+
+    while (true) {
+        cin >> time1 >> time2 >> time3;
+
+        if (time1 == -1 || time2 == -1 || time3 == -1) {
+            break;
+        }
+
+        totalProcessingTime += (time1 + time2 + time3);
+    }
+
+    cout << "всё время обработки: " << totalProcessingTime << " время." << endl;
+
+    return 0;
+}
