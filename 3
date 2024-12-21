@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cout << "введите время смены (T): ";
+    cin >> T;
+
+    int t, l;
+    int totalClients = 0;
+    int totalServiceTime = 0;
+    int currentTime = 0;
+
+    cout << "введите время прихода (t) и время обслуживания (l) для каждого человека." << endl;
+    cout << "-1 - конец." << endl;
+
+    while (true) {
+        cin >> t >> l;
+
+        if (t == -1 || l == -1) {
+            break;
+        }
+
+        if (t >= currentTime && (currentTime + l) <= T) {
+            totalClients++;
+            totalServiceTime += l;
+            currentTime += l;
+        } else {
+            cout << "клиент не может быть обслужен." << endl;
+        }
+    }
+    cout << "количество обслуженных: " << totalClients << endl;
+    cout << "всё затраченное время: " << totalServiceTime << " единиц времени." << endl;
+
+    return 0;
+}
